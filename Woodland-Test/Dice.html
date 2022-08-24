@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content
+		="width=device-width, initial-scale=1.0">
+	<title>Dice Game</title>
+
+	<style>
+		.container {
+			width: 70%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.container2 {
+			width: 70%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.dice {
+			text-align: center;
+			display: inline-block;
+			margin: 10px;
+		}
+
+		body {
+			background-color: #042f4b;
+			margin: 0;
+		}
+
+		h1 {
+			margin: 30px;
+			font-family: "Lobster", cursive;
+			text-shadow: 5px 0 #232931;
+			font-size: 4.5rem;
+			color: #4ecca3;
+			text-align: center;
+		}
+
+		p {
+			font-size: 2rem;
+			color: #4ecca3;
+			font-family: "Indie Flower", cursive;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.bottom {
+			padding-top: 30px;
+		}
+
+		.butn {
+			background: #4ecca3;
+			font-family: "Indie Flower", cursive;
+			border-radius: 7px;
+			color: #ffff;
+			font-size: 30px;
+			padding: 16px 25px 16px 25px;
+			text-decoration: none;
+		}
+
+		.butn:hover {
+			background: #232931;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Let's Play</h1>
+
+		<div class="dice">
+			<p class="Player1">Player 1</p>
+			<!--img class="img1" src="dice6.png"-->
+		</div>
+
+		<div class="dice">
+			<p class="Player2">Player 2</p>
+			<!--img class="img2" src="dice6.png"-->
+		</div>
+	</div>
+<div class="container bottom">
+		<button type="button" class="butn"
+			onClick="editNames()">
+			Edit Names
+		</button>
+	</div>
+
+	<div class="container bottom">
+		<button type="button" class="butn"
+			onClick="rollTheDice()">
+			Roll the Dice
+		</button>
+	</div>
+
+
+	<div class="container2">
+	 <p class="Results1">Result 1:</p>
+	 <p class="Results2">Result 2:</p>
+
+	 <!--p class="Array1">Array is= [1,2,3,4,5,6,7]</p-->
+
+
+
+    <!--button type="button" class="butn"
+	onclick="show()">
+        Change Array
+    </button-->
+	<button type="button" class="butn"
+	onclick="charRoll()">
+        Roll Character
+    </button>
+
+	<p class="CharHP">Character HP:</p>
+	<p class="CharSP">Character SP:</p>
+	<p class="CharATK">Character ATK:</p>
+
+
+	<button type="button" class="butn"
+	onclick="presArray()">
+        Show Tournament Order
+    </button>
+
+	<button type="button" class="butn"
+	onclick="shuffArray()">
+        Shuffle Tournament Order
+    </button>
+
+	<p class="Array2">Tournament Order = </p>
+
+
+<p class="orderDisp">Number One Seed = </p>
+
+	<script>
+
+
+	// Java program to demonstrate working of shuffle()
+// Function to shuffle the array content
+            // Function to shuffle the array content
+        function shuffleArray(array) {
+           return array.sort( ()=>Math.random()-0.5 );
+        }
+
+        // Function to show the result
+        function show() {
+            var arr = [1, 2, 3, 4, 5, 6, 7]
+            var arr1 = shuffleArray(arr)
+			document.querySelector("p.Array1").innerHTML = "Array is=  ["+ arr1 +"]";
+
+            //document.write("After shuffling: ", arr1)
+        }
+
+
+		// Player name
+		var player1 = "Player 1";
+		var player2 = "Player 2";
+
+		// Function to change the player name
+		function editNames() {
+			player1 = prompt("Change Player1 name");
+			player2 = prompt("Change player2 name");
+
+			document.querySelector("p.Player1")
+							.innerHTML = player1;
+
+			document.querySelector("p.Player2")
+							.innerHTML = player2;
+		}
+
+		// Function to roll the dice
+		function rollTheDice() {
+			setTimeout(function () {
+				var randomNumber1 = Math.floor(Math.random() * 20) + 1;
+				var randomNumber2 = Math.floor(Math.random() * 20) + 1;
+
+				/*document.querySelector(".img1").setAttribute("src",
+					"dice" + randomNumber1 + ".png");
+
+				document.querySelector(".img2").setAttribute("src",
+					"dice" + randomNumber2 + ".png");
+					*/
+				document.querySelector("p.Results1").innerHTML = "Result 1:  "+ randomNumber1;
+
+				document.querySelector("p.Results2").innerHTML = "Result 2:  "+ randomNumber2;
+
+				if (randomNumber1 === randomNumber2) {
+					document.querySelector("h1").innerHTML = "Draw!";
+				}
+
+				else if (randomNumber1 < randomNumber2) {
+					document.querySelector("h1").innerHTML
+						= (player2 + " WINS!");
+				}
+
+				else {
+					document.querySelector("h1").innerHTML
+						= (player1 + " WINS!");
+				}
+			}, 0);
+		}
+
+		var charObj = {
+		name: "Character 1",
+		hp:0,
+		speed:0,
+		attack:0
+		};
+
+		var charObj2 = {
+		name: "Character 2",
+		hp:0,
+		speed:0,
+		attack:0
+		};
+
+		var charObj3 = {
+		name: "Character 3",
+		hp:0,
+		speed:0,
+		attack:0
+		};
+
+		var myArray = [charObj.name,charObj2.name,charObj3.name];
+
+		function charRoll(){
+		charObj.hp = Math.floor(Math.random() * 20) + 1;
+		charObj.speed = Math.floor(Math.random() * 20) + 1;
+		charObj.attack = Math.floor(Math.random() * 20) + 1;
+
+		document.querySelector("p.CharHP").innerHTML = "Character HP: "+ charObj.hp;
+		document.querySelector("p.CharSP").innerHTML = "Character SP: "+ charObj.speed;
+		document.querySelector("p.CharATK").innerHTML = "Character ATK: "+ charObj.attack;
+
+
+
+		}
+
+		function presArray(){
+
+
+		document.querySelector("p.Array2").innerHTML = "Tournament Order = "+ myArray;
+		document.querySelector("p.orderDisp").innerHTML = "Number One Seed = "+ myArray[0];
+
+		//document.write("<b> Display Array Value </b>" + myArray[2]);
+		}
+
+		   // Function to show the result
+        function shuffArray() {
+            var arr1 = shuffleArray(myArray)
+			document.querySelector("p.Array2").innerHTML = "Tournament Order = "+ myArray;
+			document.querySelector("p.orderDisp").innerHTML = "Number One Seed = "+ myArray[0];
+
+        }
+
+
+	</script>
+</body>
+
+</html>
+
+
+<p class="CharHP">Character HP:</p>
+<p class="CharSP">Character SP:</p>
+<p class="CharATK">Character ATK:</p>
+
+p{
+  padding : 0;
+  margin : 0;
+  line-height : 20px;
+  }
+
+	<img id="image2" src="">

@@ -1,0 +1,114 @@
+h1 {
+  margin: 10px;
+  font-family: "Lobster", cursive;
+  text-shadow: 2px 0 #232931;
+  font-size: 5rem;
+  color: black;
+  text-align: center;
+}
+
+.containerStats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+
+}
+
+.containerStats > div {
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  background-color: #e3e2d0;
+  margin: 10px 10px 0px 10px;
+  padding: 1px;
+  width: 270px;
+  height: 150px;
+  line-height : 3px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #808080;
+  text-align: left;
+}
+
+
+
+.containerPic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+
+}
+
+.containerPic > div {
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem;
+  color: black;
+  text-align: left;
+  align-items: center;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #808080;
+  margin: -5px 10px 10px 10px;
+  padding: 0px 10px 0px 10px;
+  width: 560;
+  height: 775;
+  line-height : 5px;
+  text-shadow: 0px 0px 5px black;
+
+
+}
+
+
+
+.containerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+
+}
+
+.containerButton > button {
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  background-color: #808080;
+  margin: 10px;
+  padding: 15px;
+  width: auto;
+  height: auto;
+  line-height : 10px;
+
+}
+
+.containerButton2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+
+}
+
+.containerButton2 > button {
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #808080;
+  align-items: center;
+  margin: 10px;
+  padding: 15px;
+  width: 250px;
+  height: 250px;
+  line-height : 10px;
+
+}
+
+
+
+}
