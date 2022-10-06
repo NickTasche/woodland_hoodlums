@@ -11,7 +11,7 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
    console.log("Got a GET request for the homepage");
 
-   res.sendFile(__dirname + '/page.html');
+   res.sendFile(__dirname + '/index.html');
 
 })
 
