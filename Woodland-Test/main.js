@@ -45,7 +45,7 @@ app.get('/ab*cd', function(req, res) {
    res.send('Page Pattern Match');
 });
 
-app.listen(3000, "localhost");
+app.listen(3000);
 
 //var server = app.listen(8081, function () {
   // var host = server.address().address
