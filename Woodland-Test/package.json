@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "No Test",
-    
+    "start": " "
   },
   "author": "Nick Tasche",
   "license": "ISC",
